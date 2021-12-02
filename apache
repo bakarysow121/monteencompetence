@@ -1,0 +1,55 @@
+
+1-Quels sont les scripts permettant de gérer l'arrêt/redémarrage
+         de l'application ?
+   on gère l'arrêt d'apache avec la commande systemctl stop httpd.services
+   on gère le redemarage d'apache avec la commande systemctl restart httpd.services
+  
+2-Ou se trouve les fichiers/répertoires de configuration ?
+
+les fichiers de configuration d'apache sont dans le repetoire /etc/httpd
+
+3-Qu'est-ce qu'il est possible de paramétrer dans
+             l'application ?
+il est possible de parametrer des vhosts capable de contenir plusieurs vhôtes avec la même adresse ip et ensuite d'affiché des sites webs
+
+4-Qu'elles sont les paramètres importants pour réaliser le
+             Tuning de l'application ?
+les paramètre important pour la realisation de Tuning sont KeepAliveTimeout, KeepAlive,Timeout,MaxKeepAliveRequests,MinSpareServers,
+StartServers,MaxSpareServers,MaxClients,MaxRequestsPerChild,
+
+5-A quoi ils servent ?
+KeepAlive:Cette directive permet d’utiliser ou non les extensions KeepAlive,
+déﬁnies dans le protocole HTTP/1.1 et qui éliminent quelques
+défauts du protocole HTTP. 
+
+Timeout:Cette directive permet de spéciﬁer le temps maximum que le serveur
+Apache attendra entre l’initiation de la connexion et la ﬁn de la
+réponse à la requête HTTP.
+
+KeepAliveTimeout:Cette directive spéciﬁe le nombre de secondes maximum que le
+serveur Apache va attendre avant de fermer une connexion HTTP
+persistente.
+
+MaxKeepAliveRequests:Cette directive spéciﬁe le nombre maximum de requêtes HTTP qui
+transiteront au sein d’une connexion.
+
+MaxSpareServers:À l’inverse de la directive précédente, MaxSpareServers déﬁnit le
+nombremaximumde serveurs libres.
+
+MinSpareServers:La directive MinSpareServers permet de spéciﬁer le nombre
+minimum de serveurs libres.
+
+StartServers:Cette directive spéciﬁe le nombre de serveurs qui sont exécutés au
+démarrage d’Apache.
+
+MaxClients:Cette directive spéciﬁe le nombre maximum de serveurs simultanés.
+
+MaxRequestsPerChild:Cette directive permet de spéciﬁer le nombre maximum de requêtes
+auxquelles un processus Apache répondra avant de s’arrêter.
+
+
+6-Quels impacts ont- ils sur le fonctionnement de l'application ?
+Ces paramètres permettent de booster la performence d'apache a reponse aux requêtes
+
+7-Ou se trouve les logs de l'application ?
+Les logs sont dans le repertoire /etc/httpd/logs
